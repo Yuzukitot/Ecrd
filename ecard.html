@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You Letter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars from appearing */
+        }
+
+        /* Background animation */
+        .background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: twinkle 5s linear infinite, moveDown 10s linear infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 0.2;
+            }
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Centered SVG and text */
+        svg {
+            display: block;
+            margin: auto;
+            width: 350px;
+            height: 350px;
+            position: relative;
+            z-index: 10;
+        }
+
+        text {
+            font-family: Arial, sans-serif;
+            font-size: 2.3px;
+            fill: black;
+            opacity: 0;
+            animation: fadeIn 3s ease-in forwards;
+        }
+
+        text:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+        text:nth-child(2) {
+            animation-delay: 1s;
+        }
+        text:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+        text:nth-child(4) {
+            animation-delay: 2s;
+        }
+        text:nth-child(5) {
+            animation-delay: 2.5s;
+        }
+        text:nth-child(6) {
+            animation-delay: 3s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<!--kaya ko nilagyan ng .star para yung animaton na nabagsag ay hindi matakpan ang star na may letter, habang ang @keyframe ang naglalagay ng animation sa bawat is at sa mga letters, at ang nth-child ay yung mga letter na nakasulat at eto ang nagbibigay sa pag dedelay sa aking mga letter-->
+<body>
+    <!-- Animated Background -->
+    <div class="background">
+        <!-- Adding multiple stars dynamically -->
+        <div class="star" style="top: 10%; left: 20%; animation-duration: 7s;"></div>
+        <div class="star" style="top: 15%; left: 80%; animation-duration: 10s;"></div>
+        <div class="star" style="top: 30%; left: 50%; animation-duration: 8s;"></div>
+        <div class="star" style="top: 50%; left: 70%; animation-duration: 6s;"></div>
+        <div class="star" style="top: 75%; left: 10%; animation-duration: 9s;"></div>
+        <div class="star" style="top: 90%; left: 40%; animation-duration: 12s;"></div>
+    </div>
+
+    <!-- SVG Content -->
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <!-- Larger Five-pointed star -->
+        <polygon 
+            points="50,2 62,35 98,35 70,58 81,92 50,72 19,92 30,58 2,35 38,35" 
+            fill="lightyellow" 
+            stroke="white" 
+            stroke-width="1"/>
+
+        <!-- Thank You Letter -->
+        <text x="50" y="30" text-anchor="middle">Dear Mom and Dad,</text>
+        <text x="50" y="40" text-anchor="middle">Thank you for your love</text>
+        <text x="50" y="45" text-anchor="middle">and endless support.</text>
+        <text x="50" y="55" text-anchor="middle">You inspire me every day.</text>
+        <text x="50" y="65" text-anchor="middle">With love,</text>
+        <text x="50" y="70" text-anchor="middle">Maria Sophia Empleo</text>
+    </svg>
+</body>
+</html>
